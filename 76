@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 with open('opendata.stat.txt', encoding='utf-8') as f:
     data = [(p[2][5:], float(p[3])) for line in f 
             if 'Средняя пенсия,Забайкальский край,2018' in line 
-            and len((p:=line.strip().split(',')))>=4]
 data.sort()
 months, values = zip(*data)
 average = sum(values)/len(values)
